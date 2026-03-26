@@ -1,3 +1,39 @@
+# Deployment to GitHub Pages
+
+This project uses Vite and React. To deploy to GitHub Pages:
+
+1. Install the Vite GitHub Pages plugin:
+  ```sh
+  npm install --save-dev vite-plugin-gh-pages
+  ```
+
+2. Update your `vite.config.js` to set the correct `base` path (replace `your-username` and `your-repo`):
+  ```js
+  // vite.config.js
+  import { defineConfig } from 'vite';
+  import react from '@vitejs/plugin-react';
+  // Add this import:
+  import ghPages from 'vite-plugin-gh-pages';
+
+  export default defineConfig({
+    base: '/your-repo/',
+    plugins: [react(), ghPages()]
+  });
+  ```
+
+3. Add a deploy script to your `package.json`:
+  ```json
+  "scripts": {
+    "deploy": "vite gh-pages"
+  }
+  ```
+
+4. Deploy:
+  ```sh
+  npm run deploy
+  ```
+
+Your site will be published to the `gh-pages` branch and available at `https://your-username.github.io/your-repo/`.
 # 🚗 Trung Tâm Đào Tạo Lái Xe FOX
 
 Website giới thiệu trung tâm đào tạo lái xe FOX tại TP. Hồ Chí Minh.  
@@ -118,13 +154,20 @@ Site sẽ live tại: `https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/`
 
 ## ✉️ Kích hoạt Form Liên Hệ (Formspree)
 
-1. Đăng ký tại [formspree.io](https://formspree.io)
-2. Tạo form mới → copy Form ID (dạng `xpwzabcd`)
+1. Đăng ký tại [Web3Forms](https://web3forms.com)
+2. Tạo form mới → copy **Access Key** (dạng `xxxx-xxxx-xxxx-xxxx`)
 3. Mở [src/components/Contact.jsx](src/components/Contact.jsx)
-4. Thay `YOUR_FORM_ID` bằng ID thực:
+4. Thay `YOUR_ACCESS_KEY` bằng key thực:
 
 ```jsx
-const res = await fetch('https://formspree.io/f/xpwzabcd', { ... })
+const res = await fetch('https://api.web3forms.com/submit', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    access_key: 'YOUR_ACCESS_KEY',
+    ... // các trường dữ liệu khác
+  })
+})
 ```
 
 ---
