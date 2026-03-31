@@ -1,39 +1,41 @@
 # Deployment to GitHub Pages
 
-This project uses Vite and React. To deploy to GitHub Pages:
 
-1. Install the Vite GitHub Pages plugin:
-  ```sh
-  npm install --save-dev vite-plugin-gh-pages
-  ```
+This project uses Vite and React. To deploy to GitHub Pages using the classic `gh-pages` package:
 
-2. Update your `vite.config.js` to set the correct `base` path (replace `your-username` and `your-repo`):
-  ```js
-  // vite.config.js
-  import { defineConfig } from 'vite';
-  import react from '@vitejs/plugin-react';
-  // Add this import:
-  import ghPages from 'vite-plugin-gh-pages';
+1. Install the gh-pages package:
+   ```sh
+   npm install -D gh-pages
+   ```
 
-  export default defineConfig({
-    base: '/your-repo/',
-    plugins: [react(), ghPages()]
-  });
-  ```
+2. Update your `vite.config.js` to set the correct `base` path:
+   ```js
+   // vite.config.js
+   import { defineConfig } from 'vite';
+   import react from '@vitejs/plugin-react';
 
-3. Add a deploy script to your `package.json`:
-  ```json
-  "scripts": {
-    "deploy": "vite gh-pages"
-  }
-  ```
+   export default defineConfig({
+     base: '/driving_school/',
+     plugins: [react()]
+   });
+   ```
+
+3. Add deploy scripts to your `package.json`:
+   ```json
+   "scripts": {
+     "predeploy": "npm run build",
+     "deploy": "gh-pages -d dist"
+   }
+   ```
 
 4. Deploy:
-  ```sh
-  npm run deploy
-  ```
+   ```sh
+   npm run deploy
+   ```
 
-Your site will be published to the `gh-pages` branch and available at `https://your-username.github.io/your-repo/`.
+Your site will be published to the `gh-pages` branch and available at:
+
+`https://cuunon9x.github.io/driving_school/`
 # 🚗 Trung Tâm Đào Tạo Lái Xe FOX
 
 Website giới thiệu trung tâm đào tạo lái xe FOX tại TP. Hồ Chí Minh.  
