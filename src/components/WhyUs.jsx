@@ -48,11 +48,11 @@ export default function WhyUs() {
           </p>
         </div>
 
-        <div ref={gridRef} className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger ${gridIn ? '' : ''}`}>
+       <div ref={gridRef} className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 fade-up ${gridIn ? 'in-view' : ''}`}>
           {reasons.map((r, i) => (
             <div
               key={r.title}
-              className={`bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-gray-100 fade-up ${gridIn ? 'in-view' : ''}`}
+              className="why-card"
               style={{ transitionDelay: `${i * 80}ms` }}
             >
               <div className="text-4xl mb-4">{r.icon}</div>
