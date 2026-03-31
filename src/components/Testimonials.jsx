@@ -41,7 +41,7 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <div
               key={t.name}
-              className={`bg-white rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 fade-up ${gridIn ? 'in-view' : ''}`}
+              className="review-card"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
               <div className="flex text-yellow-400 text-lg mb-4">
