@@ -61,7 +61,7 @@ export default function FloatingContact() {
       {/* Toggle button */}
       <button
         onClick={() => setExpanded(!expanded)}
-        className="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-white shadow-lg hover:bg-primary-dark transition-all duration-200 hover:scale-110 pulse-ring"
+        className="float-bob w-14 h-14 bg-primary rounded-full flex items-center justify-center text-white shadow-lg hover:bg-primary-dark transition-colors pulse-ring"
         aria-label="Liên hệ"
       >
         <span className={`transition-transform duration-300 ${expanded ? 'rotate-45' : ''}`}>
