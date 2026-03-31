@@ -78,7 +78,7 @@ export default function Courses() {
           {courses.map((c, i) => (
             <div
               key={c.title}
-              className={`rounded-2xl p-6 border-2 flex flex-col transition-all duration-500 hover:-translate-y-2 hover:shadow-xl fade-up ${gridIn ? 'in-view' : ''} ${
+              className={`card-shimmer rounded-2xl p-6 border-2 flex flex-col transition-all duration-500 hover:-translate-y-2 hover:shadow-xl fade-up ${gridIn ? 'in-view' : ''} ${
                 c.highlight
                   ? 'border-primary bg-primary text-white shadow-xl shadow-primary/30'
                   : 'border-gray-100 bg-white shadow-sm'
